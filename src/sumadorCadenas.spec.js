@@ -27,13 +27,21 @@ describe("Sumador de cadenas", () => {
     expect(sumarCadena("500,10")).toEqual(510);
   });
 
-  /*Si le envias una cadena que contiene dos numeros, deberia devolver la suma de esos numeros*/
+  /*Si le envias una cadena que contiene tres numeros SEPARADOS POR COMA, deberia devolver la suma de esos numeros*/
   it("Deberia devolver la suma de tres numeros cuando le enviamos una cadena que contiene tres numeros y se separa por comas EJM 2,3,30 = 35", () => {
     expect(sumarCadena("2,3,30")).toEqual(35);
   });
 
-  it("Deberia devolver la suma de tres numeros cuando le enviamos una cadena que contiene tres numeros y se separa por comas EJM 10,-3,40 = 47", () => {
-    expect(sumarCadena("10,-3,40")).toEqual(47);
+  it("Deberia devolver la suma de tres numeros cuando le enviamos una cadena que contiene tres numeros y se separa por comas EJM 10,3,40 = 53", () => {
+    expect(sumarCadena("10,3,40")).toEqual(53);
   });
 
+  /*Si le envias una cadena que contiene tres numeros SEPARADOS POR - o , deberia devolver la suma de esos numeros*/
+  it("Deberia devolver la suma de tres numeros cuando le enviamos una cadena que contiene tres numeros y se separa por comas EJM 2,3-10 = 15", () => {
+    expect(sumarCadena("2,3-10")).toEqual(15);
+  });
+
+  it("Deberia devolver la suma de tres numeros cuando le enviamos una cadena que contiene tres numeros y se separa por comas EJM 2,3,30 = 35", () => {
+    expect(sumarCadena("2-10-100")).toEqual(112);
+  });
 });
