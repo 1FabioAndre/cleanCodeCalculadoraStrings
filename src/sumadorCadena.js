@@ -1,5 +1,9 @@
 function sumarCadena(cadena=""){
-    return 0;
+    if(cadena === ""){
+        return 0;
+    }
+    var valor = Number(cadena);
+    return valor;
 }
 
 export default sumarCadena;
