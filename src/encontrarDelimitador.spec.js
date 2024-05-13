@@ -21,4 +21,8 @@ describe("Encontrar delimitador", () => {
   it("Deberia devolver ; cuando le enviamos una cadena como []", () => {
     expect(encontrarDelimitador("[]")).toEqual(null);
   });
+
+  it("Deberia devolver - cuando le enviamos una cadena como [-]", () => {
+    expect(encontrarDelimitador("//[-] cadena")).toEqual("-");
+  });
 });
