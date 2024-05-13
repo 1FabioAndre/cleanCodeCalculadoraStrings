@@ -44,4 +44,10 @@ describe("Sumador de cadenas", () => {
   it("Deberia devolver la suma de tres numeros cuando le enviamos una cadena que contiene tres numeros y se separa por comas EJM 2,3,30 = 35", () => {
     expect(sumarCadena("2-10-100")).toEqual(112);
   });
+
+  /*El usuario ingresa el delimitador [delim]*/
+//   it("Deberia devolver la suma de tres numeros cuando le enviamos una cadena que contiene tres numeros y se separa por comas EJM 2,3-10 = 15", () => {
+//     expect(sumarCadena("[;] 2;3;10")).toEqual(15);
+//   });
+
 });
