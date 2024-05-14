@@ -14,16 +14,23 @@ function sumarCadena(cadena=""){
         
         // Sumar los números
         for (let i = 0; i < numeros.length; i++) {
-            suma += Number(numeros[i]);
+            var numero = Number(numeros[i]);
+            if(numero <= 1000){
+                suma += numero;
+            }
         }
         
         return suma;
     }
     else{
-        var numeros = cadena.split(/,|-/);
+        var numeros = cadena.split(/,|-|;/);
         var suma = 0;
         for(let i = 0; i < numeros.length; i++){
-            suma = suma + Number(numeros[i]);
+            var numero = Number(numeros[i]);
+            if(numero <= 1000){
+                suma += numero;
+            }
+            
         }
         return suma;
     }

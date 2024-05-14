@@ -50,4 +50,16 @@ describe("Sumador de cadenas", () => {
       expect(sumarCadena("//[;] 2;3;10")).toEqual(15);
   });
 
+  it("Deberia devolver la suma de tres numeros cuando le enviamos un delimitador [;] cadena que contiene tres numeros y se separa por comas EJM 2;3;10 = 15", () => {
+    expect(sumarCadena("//[;] 2;3;10")).toEqual(15);
+  });
+
+  /* DEBERIA IGNORAR NUMEROS MAYORES A 1000*/
+  it("Deberia ignorar numeros mayores a 1000 ", () => {
+    expect(sumarCadena("//[;] 2;3000;1003")).toEqual(2);
+  });
+
+  it("Deberia ignorar numeros mayores a 1000 sin especificar el separador", () => {
+    expect(sumarCadena("1000;3000;1003")).toEqual(1000);
+  });
 });
