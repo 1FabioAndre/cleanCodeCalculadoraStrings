@@ -59,7 +59,22 @@ describe("Sumador de cadenas", () => {
     expect(sumarCadena("//[;] 2;3000;1003")).toEqual(2);
   });
 
+  /* DEBERIA IGNORAR NUMEROS MAYORES A 1000*/
+  it("Deberia ignorar numeros mayores a 1000 ", () => {
+    expect(sumarCadena("//[;] 2;3000;1003")).toEqual(2);
+  });
+
   it("Deberia ignorar numeros mayores a 1000 sin especificar el separador", () => {
     expect(sumarCadena("1000;3000;1003")).toEqual(1000);
+  });
+
+  // O P C I O N A L E S
+  /* DELIMITADORES DE CUALQUIER CANTIDAD DE CARACTERES */
+  it("Deberia poder ingresar separadores de cualquier tamaño //[***]", () => {
+    expect(sumarCadena("//[***] 1***2***3***4")).toEqual(10);
+  });
+
+  it("Deberia poder ingresar separadores de cualquier tamaño //[--]", () => {
+    expect(sumarCadena("//[--] 1--2--3")).toEqual(6);
   });
 });
