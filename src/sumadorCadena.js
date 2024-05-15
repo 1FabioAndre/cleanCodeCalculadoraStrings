@@ -9,18 +9,9 @@ function sumarCadena(cadena=""){
 
     if(delimitador){
         // Si se encuentra un delimitador personalizado, dividir la cadena usando ese delimitador
-        var numeros = cadena.split(" ")[1].split(delimitador);
-        var suma = 0;
-        
-        // Sumar los números
-        for (let i = 0; i < numeros.length; i++) {
-            var numero = Number(numeros[i]);
-            if(numero <= 1000){
-                suma += numero;
-            }
-        }
-        
-        return suma;
+        var numeros = obtenerNumerosConDelimitador(cadena, delimitador);
+        return sumarNumeros(numeros);
+
     }
     else{
         var numeros = cadena.split(/,|-|;/);
@@ -37,3 +28,19 @@ function sumarCadena(cadena=""){
 }
 
 export default sumarCadena;
+
+
+function obtenerNumerosConDelimitador(cadena, delimitador) {
+    return cadena.split(" ")[1].split(delimitador).map(Number);
+}
+
+function sumarNumeros(numeros) {
+    var suma = 0;
+    for (let i = 0; i < numeros.length; i++) {
+        var numero = numeros[i];
+        if (numero <= 1000) {
+            suma += numero;
+        }
+    }
+    return suma;
+}
