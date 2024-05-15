@@ -14,24 +14,19 @@ function sumarCadena(cadena=""){
 
     }
     else{
-        var numeros = cadena.split(/,|-|;/);
-        var suma = 0;
-        for(let i = 0; i < numeros.length; i++){
-            var numero = Number(numeros[i]);
-            if(numero <= 1000){
-                suma += numero;
-            }
-            
-        }
-        return suma;
+        var numeros = obtenerNumerosPorSeparadores(cadena);
+        return sumarNumeros(numeros);
     }
 }
 
 export default sumarCadena;
 
-
 function obtenerNumerosConDelimitador(cadena, delimitador) {
     return cadena.split(" ")[1].split(delimitador).map(Number);
+}
+
+function obtenerNumerosPorSeparadores(cadena) {
+    return cadena.split(/,|-|;/).map(Number);
 }
 
 function sumarNumeros(numeros) {
